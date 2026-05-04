@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <p className='flex bg-green-400'>Tailwind test</p>
+   
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
