@@ -5,3 +5,4 @@ export const calcStore = configureStore({
     calc: calcReducer,
   },
 });
+export type RootState = ReturnType<typeof calcStore.getState>;
