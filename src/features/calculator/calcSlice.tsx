@@ -27,10 +27,24 @@ export const calcSlice = createSlice({
       const { firstNumber, secoundNumber } = action.payload;
       state.result = Number(firstNumber) / Number(secoundNumber);
     },
+    modulo: (state, action: PayloadAction<PayloadType>) => {
+      const { firstNumber, secoundNumber } = action.payload;
+      state.result = Number(firstNumber) % Number(secoundNumber);
+    },
+    percentage: (state, action: PayloadAction<PayloadType>) => {
+      const { firstNumber, secoundNumber } = action.payload;
+      state.result = (Number(firstNumber) * Number(secoundNumber)) / 100;
+    },
   },
 });
 
 export default calcSlice.reducer;
 
-export const { addition, subtraction, multiplication, division } =
-  calcSlice.actions;
+export const {
+  addition,
+  subtraction,
+  multiplication,
+  division,
+  modulo,
+  percentage,
+} = calcSlice.actions;

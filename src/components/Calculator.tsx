@@ -8,6 +8,8 @@ import {
   subtraction,
   multiplication,
   division,
+  modulo,
+  percentage,
 } from "../features/calculator/calcSlice";
 import type { RootState } from "../app/store";
 
@@ -52,6 +54,24 @@ function Calculator() {
   function handleDivision() {
     dispatch(
       division({
+        firstNumber: Number(firstNumber),
+        secoundNumber: Number(secoundNumber),
+      }),
+    );
+  }
+
+  function handleModulo() {
+    dispatch(
+      modulo({
+        firstNumber: Number(firstNumber),
+        secoundNumber: Number(secoundNumber),
+      }),
+    );
+  }
+
+  function handlePercentage() {
+    dispatch(
+      percentage({
         firstNumber: Number(firstNumber),
         secoundNumber: Number(secoundNumber),
       }),
@@ -170,6 +190,22 @@ function Calculator() {
             className="text-white p-2 rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/50 cursor-pointer hover:text-black"
           >
             /
+          </button>
+
+          <button
+            onClick={handlePercentage}
+            type="button"
+            className="text-white p-2 rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/50 cursor-pointer hover:text-black"
+          >
+            %
+          </button>
+
+          <button
+            onClick={handleModulo}
+            type="button"
+            className="text-white p-2 rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/50 cursor-pointer hover:text-black"
+          >
+            Mod
           </button>
         </div>
 
